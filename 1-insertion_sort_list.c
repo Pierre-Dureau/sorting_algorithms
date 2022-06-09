@@ -1,5 +1,11 @@
 #include "sort.h"
 
+/**
+ * swap_listint_left - Swaps node of doubly linked list with its previous
+ * @head: Adress to head of linked list
+ * @node: Node to swap
+ * Return: Adress to head of linked list
+ */
 listint_t	**swap_listint_left(listint_t **head, listint_t *node)
 {
 	listint_t	*tmp, *node_left;
@@ -22,12 +28,16 @@ listint_t	**swap_listint_left(listint_t **head, listint_t *node)
 	return (head);
 }
 
+/**
+ * insertion_sort_list - Sorts doubly linked list using Insertion Sort
+ * @list: Adress to head of linked list
+ */
 void	insertion_sort_list(listint_t **list)
 {
 	listint_t *iter_a, *iter_b;
 
 	if (!list || !*list)
-		return ;
+		return;
 	iter_a = *list;
 	while (iter_a)
 	{
