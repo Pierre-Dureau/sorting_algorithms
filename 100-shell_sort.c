@@ -50,6 +50,9 @@ void	shell_sort(int *array, size_t size)
 {
 	int i = 0;
 
+	if (size < 2)
+		return;
+
 	while (knuth_sequence(i + 1) < size)
 		i++;
 	while (i >= 0)
