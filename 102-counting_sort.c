@@ -1,5 +1,5 @@
 #include "sort.h"
-#include <stdio.h>
+#include <unistd.h>
 
 /**
  * counting_sort - counting sort algorithm
@@ -11,7 +11,7 @@ void counting_sort(int *array, size_t size)
 	int i, max = 0;
 	int *count = NULL;
 
-	if (!array)
+	if (!array || size < 2)
 		return;
 	for (i = 0; i < (int)size; i++)
 	{
@@ -29,12 +29,8 @@ void counting_sort(int *array, size_t size)
 	{
 		if (i + 1 < max)
 			count[i + 1] += count[i];
-		printf("%d", count[i]);
-		if (i != max - 1)
-			printf(", ");
-		else
-			printf("\n");
 	}
+	print_array(count, max);
 	for (i = 0; i < max; i++)
 	{
 		if (i && count[i] != count[i - 1])
