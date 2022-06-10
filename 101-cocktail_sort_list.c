@@ -1,5 +1,11 @@
 #include "sort.h"
 
+/**
+ * swap_right - Swap a node to the right
+ *
+ * @temp: Node to swap
+ */
+
 void swap_right(listint_t *temp)
 {
 	if (temp->next)
@@ -11,6 +17,12 @@ void swap_right(listint_t *temp)
 		temp->prev->next = temp;
 	temp->next->prev = temp;
 }
+
+/**
+ * swap_left - Swap a node to the left
+ *
+ * @temp: Node to swap
+ */
 
 void swap_left(listint_t *temp)
 {
@@ -25,9 +37,9 @@ void swap_left(listint_t *temp)
 }
 
 /**
- * @brief
+ * cocktail_sort_list - Sorts a list using the Cocktail sort algorithm
  *
- * @param list
+ * @list: Double linked list
  */
 
 void cocktail_sort_list(listint_t **list)
@@ -35,7 +47,7 @@ void cocktail_sort_list(listint_t **list)
 	listint_t *head = *list;
 	int check = 1;
 
-	if (!head->next)
+	if (!list || !*list || !head->next)
 		return;
 
 	while (check)
@@ -55,10 +67,8 @@ void cocktail_sort_list(listint_t **list)
 			else
 				head = head->next;
 		}
-
 		if (check == 0)
 			break;
-
 		while (head->prev)
 		{
 			if (head->n < head->prev->n)
