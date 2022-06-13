@@ -1,5 +1,4 @@
 #include "sort.h"
-#include <stdio.h>
 
 /**
  * quick_sort_recursion - sort the array using quick sort
@@ -23,6 +22,7 @@ void quick_sort_recursion(int *array, int low, int high, int size)
 			tmp = array[i];
 			array[i] = array[j];
 			array[j] = tmp;
+			
 			if (i != j)
 				print_array(array, size);
 		}
@@ -42,7 +42,7 @@ void quick_sort_recursion(int *array, int low, int high, int size)
  */
 void quick_sort(int *array, size_t size)
 {
-	if (size < 2)
+	if (!array || size < 2)
 		return;
 	quick_sort_recursion(array, 0, size - 1, size);
 }
