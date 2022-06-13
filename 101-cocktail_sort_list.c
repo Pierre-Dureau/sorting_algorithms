@@ -44,13 +44,12 @@ void swap_left(listint_t *temp)
 
 void cocktail_sort_list(listint_t **list)
 {
-	listint_t *head = *list;
+	listint_t *head;
 	int check = 1;
 
-	if (!head)
+	if (!list || !*list || !(*list)->next)
 		return;
-	if (!head->next)
-		return;
+	head = *list;
 	while (check)
 	{
 		check = 0;
