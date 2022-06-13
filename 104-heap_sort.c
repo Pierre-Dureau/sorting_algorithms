@@ -1,14 +1,38 @@
 #include "sort.h"
 
+/**
+ * get_parent - Get the parent
+ *
+ * @i: integer
+ * Return: The place of the parent
+ */
+
 int get_parent(int i)
 {
 	return ((i - 1) / 2);
 }
 
+/**
+ * get_child - Get the child
+ *
+ * @i: integer
+ * @is_right: integer
+ * Return: The place of the child
+ */
+
 int get_child(int i, int is_right)
 {
 	return (2 * i + 1 + (is_right != 0));
 }
+
+/**
+ * siftdown - shifting down
+ *
+ * @array: Array to sort
+ * @i: integer
+ * @size: size of the array for comparaison
+ * @print_size: size of the array for print
+ */
 
 void	siftdown(int *array, int i, int size, int print_size)
 {
@@ -31,6 +55,13 @@ void	siftdown(int *array, int i, int size, int print_size)
 		siftdown(array, max, size, print_size);
 	}
 }
+
+/**
+ * heap_sort - Sorts an array using the Heap Sort method
+ *
+ * @array: Array to sort
+ * @size: size fo the array
+ */
 
 void	heap_sort(int *array, size_t size)
 {
