@@ -28,7 +28,8 @@ int partition(int *arr, int low, int high, size_t size)
 		tmp = arr[low];
 		arr[low] = arr[high];
 		arr[high] = tmp;
-		print_array(arr, size);
+		if (low != high)
+			print_array(arr, size);
 		low++;
 		high--;
 	}
