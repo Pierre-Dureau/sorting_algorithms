@@ -6,7 +6,7 @@
  * @gap: Gap between values to swap
  * @size: Size of array
  */
-void	sort_with_gap(int *array, int gap, size_t size)
+void	sort_with_gap(int *array, int gap, int size)
 {
 	int		i = 0, j = 0, tmp;
 
@@ -32,9 +32,9 @@ void	sort_with_gap(int *array, int gap, size_t size)
  * @i: Index of the number
  * Return: Number at index @i of the Knuth squence
  */
-int		knuth_sequence(int i)
+size_t		knuth_sequence(int i)
 {
-	int	n = 1;
+	size_t	n = 1;
 
 	while (i--)
 		n = n * 3 + 1;
