@@ -47,13 +47,13 @@ void	bitonic_split(int *array, size_t low, size_t part_size, int dir,
 {
 	if (part_size < 2)
 		return;
-	printf("Merging [%lu/%lu] (%s)\n", part_size, size,
+	printf("Merging [%lu/%lu] (%s):\n", part_size, size,
 		(dir == 1) ? "UP" : "DOWN");
 	print_array(array + low, part_size);
 	bitonic_split(array, low, part_size / 2, 1, size);
 	bitonic_split(array, low + part_size / 2, part_size / 2, 0, size);
 	bitonic_merge(array, low, part_size, dir, size);
-	printf("Result [%lu/%lu] (%s)\n", part_size, size,
+	printf("Result [%lu/%lu] (%s):\n", part_size, size,
 		(dir == 1) ? "UP" : "DOWN");
 	print_array(array + low, part_size);
 }
