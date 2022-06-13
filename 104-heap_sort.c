@@ -1,16 +1,16 @@
 #include "sort.h"
 
-int		get_parent(int i)
+int get_parent(int i)
 {
 	return ((i - 1) / 2);
 }
 
-int		get_child(int i, int is_right)
+int get_child(int i, int is_right)
 {
 	return (2 * i + 1 + (is_right != 0));
 }
 
-void	siftdown(int *array, int i, size_t size, size_t print_size)
+void	siftdown(int *array, int i, int size, int print_size)
 {
 	int	left, right, max, tmp;
 
